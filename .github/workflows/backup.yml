@@ -1,0 +1,37 @@
+name: Backup
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  backup:
+    name: Backup
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Fetch updated files
+      env:
+        GDRIVE_TOKEN: ${{ secrets.GDRIVE_TOKEN }}
+      run: make backup
+
+    - name: Commit
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git add .
+        if [ "$(git status | grep "nothing to commit" | wc -l)" = "0" ]; then
+          git config --global user.name "Backup"
+          git config --global user.email actions@github.com
+          git commit -m "Backup $(date -u)"
+
+          OWNER=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 1)
+          header=$(echo -n "${OWNER}:${GITHUB_TOKEN}" | base64)
+          git -c http.extraheader="AUTHORIZATION: basic $header" push origin HEAD:master
+        fi

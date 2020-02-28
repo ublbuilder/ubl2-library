@@ -4,5 +4,5 @@ backup:
 		-v $(shell pwd):/work \
 		-w /work \
 		-u $(shell id -u) \
-		ublbuilder/backup:dev \
+		ublbuilder/backup:edge \
 		sh backup.sh
