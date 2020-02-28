@@ -1,0 +1,17 @@
+name: Backup
+
+on:
+  schedule:
+    - cron:  '*/30 * * * *'
+
+jobs:
+  backup:
+    name: Backup
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Fetch updated files
+      run: make backup
