@@ -32,12 +32,12 @@ gdrive-backup \
 
 # Transportation (tsc)
 
-gdrive-backup \
-    "16MPInQ2ubZSTvtZWBqOgtaqNcuNHxW8aNrG2HGrH4yI" \
-    "application/vnd.oasis.opendocument.spreadsheet" \
-    "src/tsc/Library.ods"
+#gdrive-backup \
+#    "16MPInQ2ubZSTvtZWBqOgtaqNcuNHxW8aNrG2HGrH4yI" \
+#    "application/vnd.oasis.opendocument.spreadsheet" \
+#    "src/tsc/Library.ods"
 
-gdrive-backup \
-    "1j6sHdX9HX8VQ7mAr4DFbOchNHfF9g0HtC6z3Y43tvM4" \
-    "application/vnd.oasis.opendocument.spreadsheet" \
-    "src/tsc/Documents.ods"
+#gdrive-backup \
+#    "1j6sHdX9HX8VQ7mAr4DFbOchNHfF9g0HtC6z3Y43tvM4" \
+#    "application/vnd.oasis.opendocument.spreadsheet" \
+#    "src/tsc/Documents.ods"
