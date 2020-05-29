@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Main
 
 gdrive-backup \
@@ -17,15 +19,15 @@ gdrive-backup \
     "application/vnd.oasis.opendocument.spreadsheet" \
     "src/main/Documents.ods"
 
-gdrive-backup \
-    "1ra0tRhlSixWSnM5fEf-jUURGpJLIUO2Y7zZ2OY2H6GE" \
-    "text/plain" \
-    "src/main/party-summary-information.xml"
+#gdrive-backup \
+#    "1ra0tRhlSixWSnM5fEf-jUURGpJLIUO2Y7zZ2OY2H6GE" \
+#    "text/plain" \
+#    "src/main/party-summary-information.xml"
 
-gdrive-backup \
-    "16jacpr-68Z_FCJmmrUVunarYkU4Qz10PI_uBOiB6Lv8" \
-    "text/plain" \
-    "src/main/schema-summary-information.xml"
+#gdrive-backup \
+#    "16jacpr-68Z_FCJmmrUVunarYkU4Qz10PI_uBOiB6Lv8" \
+#    "text/plain" \
+#    "src/main/schema-summary-information.xml"
 
 
 # Transportation (tsc)
